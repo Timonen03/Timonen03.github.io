@@ -67,9 +67,9 @@
 </head>
 <body>
 
-    <button class="collapsible active"><header><h1>21-06-2023</h1></header></button>
-    <div class="content" style="max-height: 326px;">
-        <aside>Lisäilin ominaisuuksia .</aside>
+    <button id="myButton1" class="collapsible"><header><h1>21-06-2023</h1></header></button>
+    <div class="content">
+        <aside>Lisäilin ominaisuuksia.</aside>
         <h2>Hikinen ja pidän hengitystä.</h2>
         <p>Tulispa ne tulokset jo</p>
         <h2>Päivän laulu</h2>
@@ -79,8 +79,8 @@
 
     <hr>
 
-    <button class="collapsible active"><header><h1>20-06-2023</h1></header></button>
-    <div class="content" style="max-height: 326px;">
+    <button id="myButton2" class="collapsible"><header><h1>20-06-2023</h1></header></button>
+    <div class="content">
         <aside>Tein tän sivun.</aside>
         <h2>Uuden arjen alku</h2>
         <p>Nukuin toisessa kassussa koska meidän kassua maalataan. Nukuin makuupussissa käyttäen tyynynä pyykkikassia täynnä sukkia, alushousuja ja t-paitoja. Ammuliikunta vitutti kun en ehitnyt käydä vessassa ja ryntäsin aamupalan jälkeen komennuspaikalle. Sain tehtyä aika paljon päivän aikana mutta tarpeeksi turhaa aikaa löyty että tein tän nettisivun. Yllättävän helppoa ja ilmaista kaiken lisäks.</p>
@@ -91,8 +91,8 @@
 
     <hr>
 
-    <button class="collapsible active"><header><h1>Lempi laulut</h1></header></button>
-    <div class="content" style="max-height: 266px;">
+    <button id="myButton3" class="collapsible"><header><h1>Lempi laulut</h1></header></button>
+    <div class="content">
         <ul>
             <li><a href="https://www.youtube.com/watch?v=rpaonSDPw7Y">Accordion</a></li>
             <li><a href="https://www.youtube.com/watch?v=63ucJmVonAc">Ballad of a Thin Man</a></li>
@@ -104,11 +104,6 @@
             <li><a href="https://www.youtube.com/watch?v=l9fN-8NjrvI">Wesley's theory</a></li>
         </ul>
     </div>
-
-
-
-
-
 
 
     <script>
@@ -127,7 +122,11 @@
             });
         }
     </script>
-
+    <script>
+        document.getElementById('myButton1').click()
+        document.getElementById('myButton2').click()
+        document.getElementById('myButton3').click()
+    </script>
 
 </body>
 </html>
