@@ -31,31 +31,103 @@
             a:hover {
                 border-bottom: 0;
             }
+
+
+
+        .collapsible {
+            background-color: #f2f2f2;
+            color: #444444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active {
+            background-color: #f2f2f2;
+        }
+
+        .collapsible:hover {
+            background-color: #a9a9a9;
+            color: #2f2f2f
+        }
+
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>20-06-2023</h1>
-        <aside>Tein tän sivun.</aside>
-    </header>
-    <h2>Uuden arjen alku</h2>
-    <p>Nukuin toisessa kassussa koska meidän kassua maalataan. Nukuin makuupussissa käyttäen tyynynä pyykkikassia täynnä sukkia, alushousuja ja t-paitoja. Ammuliikunta vitutti kun en ehitnyt käydä vessassa ja ryntäsin aamupalan jälkeen komennuspaikalle. Sain tehtyä aika paljon päivän aikana mutta tarpeeksi turhaa aikaa löyty että tein tän nettisivun. Yllättävän helppoa ja ilmaista kaiken lisäks.</p>
-    <h2>Päivän laulu</h2>
-    <p><a href="https://www.youtube.com/watch?v=YwSZvHqf9qM">Tangled Up In Blue</a></p>
+
+    <button class="collapsible active"><header><h1>21-06-2023</h1></header></button>
+    <div class="content" style="max-height: 326px;">
+        <aside>Lisäilin ominaisuuksia .</aside>
+        <h2>Hikinen ja pidän hengitystä.</h2>
+        <p>Tulispa ne tulokset jo</p>
+        <h2>Päivän laulu</h2>
+        <p><a href="https://youtu.be/vp0zs6z1aLk">If Not For You</a></p>
+    </div>
+
+
     <hr>
-    <header>
-        <h1>Lempi laulut</h1>
-    </header>
-    <ul>
-        <li><a href="https://www.youtube.com/watch?v=rpaonSDPw7Y">Accordion</a></li>
-        <li><a href="https://www.youtube.com/watch?v=63ucJmVonAc">Ballad of a Thin Man</a></li>
-        <li><a href="https://www.youtube.com/watch?v=jrp39d9ZFtE">Found God in a Tomato</a></li>
-        <li><a href="https://www.youtube.com/watch?v=hsPFxcvspuI">Maailman onnellisin kansa</a></li>
-        <li><a href="https://www.youtube.com/watch?v=ObOqq1knVxs">That Funny Feeling</a></li>
-        <li><a href="https://www.youtube.com/watch?v=LxsDc2P6oMQ">The Other Side</a></li>
-        <li><a href="https://www.youtube.com/watch?v=HhZaHf8RP6g">Verdis Quo</a></li>
-        <li><a href="https://www.youtube.com/watch?v=l9fN-8NjrvI">Wesley's theory</a></li>
-    </ul>
+
+    <button class="collapsible active"><header><h1>20-06-2023</h1></header></button>
+    <div class="content" style="max-height: 326px;">
+        <aside>Tein tän sivun.</aside>
+        <h2>Uuden arjen alku</h2>
+        <p>Nukuin toisessa kassussa koska meidän kassua maalataan. Nukuin makuupussissa käyttäen tyynynä pyykkikassia täynnä sukkia, alushousuja ja t-paitoja. Ammuliikunta vitutti kun en ehitnyt käydä vessassa ja ryntäsin aamupalan jälkeen komennuspaikalle. Sain tehtyä aika paljon päivän aikana mutta tarpeeksi turhaa aikaa löyty että tein tän nettisivun. Yllättävän helppoa ja ilmaista kaiken lisäks.</p>
+        <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=YwSZvHqf9qM">Tangled Up In Blue</a></p>
+    </div>
+
+
+    <hr>
+
+    <button class="collapsible active"><header><h1>Lempi laulut</h1></header></button>
+    <div class="content" style="max-height: 266px;">
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=rpaonSDPw7Y">Accordion</a></li>
+            <li><a href="https://www.youtube.com/watch?v=63ucJmVonAc">Ballad of a Thin Man</a></li>
+            <li><a href="https://www.youtube.com/watch?v=jrp39d9ZFtE">Found God in a Tomato</a></li>
+            <li><a href="https://www.youtube.com/watch?v=hsPFxcvspuI">Maailman onnellisin kansa</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ObOqq1knVxs">That Funny Feeling</a></li>
+            <li><a href="https://www.youtube.com/watch?v=LxsDc2P6oMQ">The Other Side</a></li>
+            <li><a href="https://www.youtube.com/watch?v=HhZaHf8RP6g">Verdis Quo</a></li>
+            <li><a href="https://www.youtube.com/watch?v=l9fN-8NjrvI">Wesley's theory</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
 
 </body>
 </html>
