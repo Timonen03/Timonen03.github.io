@@ -67,12 +67,70 @@
 </head>
 <body>
 
-    <button id="myButton1" class="collapsible"><header><h1>21-06-2023</h1></header></button>
+    <button id="myButton7" class="collapsible"><header><h1>25-06-2023</h1></header></button>
     <div class="content">
-        <aside>Lisäilin ominaisuuksia.</aside>
-        <h2>Hikinen ja pidän hengitystä.</h2>
-        <p>Tulispa ne tulokset jo</p>
+        <aside>Siivoilin.</aside>
+
+        <h2>Sunnuntai. Odotin ja ostin.</h2>
+        <p>Perinteinen sunnuntai päivä ennen inttiin paluuta. Heräsin myöhään, pelasin tietokoneella ja söin hyvää ruokaa. Ahdistaa yhä yliopisto. Kaiken kaikkiaan hyvä päivä. Intissä toimin ensimmäisenä apupäivystäjänä. Oli rankempaa ku oletin. Ei riittänyt keskittymiskyky lukemiseen oikeen. Pitäis lukee enemmän taas.</p>
+
         <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=woMhhy96gMo">On The Road Again</a></p>
+    </div>
+
+    <hr>
+
+    <button id="myButton6" class="collapsible"><header><h1>24-06-2023</h1></header></button>
+    <div class="content">
+        <aside>Makailin.</aside>
+
+        <h2>Lauantai. Katumista ja krapulaa.</h2>
+        <p>Varmaan elämäni pahin krapula tähän mennessä. Seittemän jälkeen mä en saanu enää unta. Letut oli tosi hyvii ja matka takas oli helpompi ku luulin buranan takii. Kotona mä nukuin ja sit tein kanavoileipiä. Ihan vitun hyvii. Sit pelasin Final Fantasy 16. Hella hyvä. Tosi hyvä päivä.</p>
+
+        <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=f99njZJod2c">If We Were Gay</a></p>
+    </div>
+
+    <hr>
+
+    <button id="myButton5" class="collapsible"><header><h1>23-06-2023</h1></header></button>
+    <div class="content">
+        <aside>Join liikaa.</aside>
+
+        <h2>Perjantai. Juhannusta ja juomista.</h2>
+        <p>Joo outo päivä. Join liikaa. Ei silleen et oisin tehny mitään tyhmää, pidin silti keskusteluu yllä ihan perus tasol. Lähinnä mulla oli vaan sekava olo. Tunteet oli ihan paskana yliopiston takia ja hänen takia. Oli ihan kiva ilta ja oli hauskaa olla mun frendien kanssa.</p>
+
+        <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=G6TyH-dQUV0">California Dreamin'</a></p>
+    </div>
+
+    <hr>
+
+    <button id="myButton4" class="collapsible"><header><h1>22-06-2023</h1></header></button>
+    <div class="content">
+        <aside>Juoksin karkuun.</aside>
+
+        <h2>Torstai. Pizzaa ja melkein pornoa.</h2>
+        <p>Nähtiin kavereitten kaa intin jälkee. Pelattiin jotain ihan hauskaa Ninja Turtles pelii ja sit erittäin taktinen War Of The Ring peli. Tilattiin Pappa Pizzaa ja lyhyen ja pätkivän Immortality session jälkeen mentiin kävelee Kjällträskin ympäri. Dan Avidanin uus levy julkastiin niin pakotin kaikki kuuntelee sen mun kaa mun kajareista jotka roikku mun vyöstä. Erittäin hyvä. Ei oo pitkään mikään laulu vaikuttanut muhun yhtä paljon ku Karma Police. Ehkä pitää kuunnella lisää Radioheadii. Sen jälkeen me palattiin meille ja katottiin ensimmäinen jakso "The Idol" sarjaa. En oo myöskään hetkeen nauranut yhtä paljoa. Erittäin hyvä ilta. Jos ei oo vielä ilmiselvää niin mä yritän vaan juosta pakoon ajatuksia yliopistosta.</p>
+
+        <blockquote>
+            "He's the rizzly bear grr"<br>
+            - <em>Antonio de Arruda Camaran teoria siitä mitä The Idol sarjan tekijät yrittävät kertoa katsojalle The Weekndin hahmosta.</em>
+        </blockquote>
+
+        <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=sqafGEgzDMk">Karma Police</a></p>
+    </div>
+
+    <hr>
+
+    <button id="myButton3" class="collapsible"><header><h1>21-06-2023</h1></header></button>
+    <div class="content">
+        <aside>Sain mitä halusin.</aside>
+
+        <h2>Keskiviikko. Hikinen ja pidän hengitystä.</h2>
+        <p>"Tulispa ne tulokset jo", Joo voi vittu. Ahdisti ja hajotti. Sentään pääs seuraavana päivänä himaan.</p>
+        <h3>Päivän laulu</h3>
         <p><a href="https://youtu.be/vp0zs6z1aLk">If Not For You</a></p>
     </div>
 
@@ -91,7 +149,7 @@
 
     <hr>
 
-    <button id="myButton3" class="collapsible"><header><h1>Lempi laulut</h1></header></button>
+    <button id="myButton1" class="collapsible"><header><h1>Lempi laulut</h1></header></button>
     <div class="content">
         <ul>
             <li><a href="https://www.youtube.com/watch?v=rpaonSDPw7Y">Accordion</a></li>
@@ -120,13 +178,8 @@
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
             });
+            document.getElementById(coll[i].id).click()
         }
     </script>
-    <script>
-        document.getElementById('myButton1').click()
-        document.getElementById('myButton2').click()
-        document.getElementById('myButton3').click()
-    </script>
-
 </body>
 </html>
