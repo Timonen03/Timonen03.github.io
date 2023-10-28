@@ -102,12 +102,12 @@
 
 
         function changeImage(img) {
-            var nom = getRandom(1, 78)
-       
-            num = "olivian_kortit/kortti (" + nom + ").PNG"
+            var nom = getRandom(0, 97)
+
+            num = "olivian_kortit/kortti (" + nom + ").png"
 
             img.src = num
-        }   
+        }
 
 
     </script>
@@ -115,4 +115,11 @@
         <img class="center-fit" src='olivian_kortit/peli intro.png' onclick='changeImage(this);'>
     </div>
 </body>
-</html> 
+</html>
+
+<!--
+cd Desktop\Timonen03.github.io\olivian_kortit
+
+ren *.PNG *.png
+    var nom = getRandom(0, 97)
+-->
