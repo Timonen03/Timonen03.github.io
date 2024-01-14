@@ -1,11 +1,9 @@
-    <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-    <title>Anssi.Timonen</title>
-    <meta name="description" content="description here" />
-
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+    <title>Sample</title>
     <style>
         body {
             margin: 5% auto;
@@ -28,87 +26,116 @@
             text-decoration: none;
         }
 
-            a:hover {
-                border-bottom: 0;
-            }
-
-
+        a:hover {
+            border-bottom: 0;
+        }
 
         .collapsible {
-            background-color: #f2f2f2;
-            color: #444444;
             cursor: pointer;
             padding: 18px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
-            font-size: 15px;
+            font-size: 16px;
+            transition: background-color 0.4s;
         }
-
-        .active {
-            background-color: #f2f2f2;
-        }
-
-        .collapsible:hover {
-            background-color: #a9a9a9;
-            color: #2f2f2f
-        }
-
 
         .content {
             padding: 0 18px;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            background-color: #f1f1f1;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .collapsible:hover {
+            background-color: #ccc;
         }
     </style>
 </head>
-<body>
     <nav>
         <a href="./index.html">Home</a>
         <a href="./olivian_peli.html">Olivian peli</a>
         <a href="./trivia.html">Trivia</a>
     </nav>
-    <!--
+<body>
+
+      <!--
+    
+    SITAATTI  KOODI \/
+    
+    <blockquote>
+        "SITAATTI TÄHÄ"<br>
+        - <em>SITAATIN LÄHDE."</em>
+    </blockquote>
+
+    --------------------------------------------------------------------------------------
+
+    STRIKETHROUGH KOMENTO \/
+
+    <s>TEKSTI TÄHÄN</s>
+
+    --------------------------------------------------------------------------------------
+
     PERUSPÄIVÄ TEMPLATE \/
 
-        <button id="day X" class="collapsible"><header><h1>OTSIKKO</h1></header></button>
-        <div class="content">
-            <aside>PIKKUTEKSTI.</aside>
+    <button class="collapsible"><header><h1>PÄIVÄMÄÄRÄ TÄHÄN</h1></header></button>
+    <div class="content">
+        <aside>MITÄ TEIT.</aside>
 
-            <h2>KAPPALEEN NIMI.</h2>
-            <p>
-                TEKSTI TÄHÄN
+        <h2>VIIKONPÄIVÄ</h2>
+        <p>
+           TEKSTI TÄHÄN 
+        </p>
 
-            </p>
+        <h2>HUOMISEN VIIKONPÄIVÄN main questit</h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
 
-            <h2>Tiistain Main Questit</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <h2>Päivän laulu</h2>
+        <p><a href="YOUTUBE LINKKI TÄHÄ">LAULUN NIMI TÄHÄ</a></p>
+    </div>
 
-            <h2>Päivän laulu</h2>
-            <p><a href="LINK HERE">SONG NAME HERE</a></p>
+    <hr>
 
-
-        </div>
-
-        <hr>
-
-    QUOTE TEKSTI KOODI \/
-    <blockquote>
-        "QUOTE HERE"<br>
-        - <em>ORIGIN OF QUOTE."</em>
-    </blockquote>
+    --------------------------------------------------------------------------------------
     -->
 
-    <button id="day 11" class="collapsible"><header><h1>20.9.2023</h1></header></button>
+    <button class="collapsible"><header><h1>14.1.2024</h1></header></button>
+    <div class="content">
+        <aside>Selvittelin asioita.</aside>
+
+        <h2>Sunnuntai</h2>
+        <p>
+            Heräsin aika myöhään, koira mun vieres. Vietin siinä maailman hitainta aamua prokrastinoidessa HTI.100 kurssi hommien selvittämistä.  
+            Sain siinä joskus iltapäivästä rohkeutta alkaa tutkii asiaa ja sain tietää etten päässyt kurssista läpi koska mult puuttui tenttiä tehdessä aktiivisuuspisteitä, 
+            jonka seurauksena mun käsitekarttaa ei edes katottu. Sit ku laitoin opettajalle viestii niin sain tietää et mun pitää uusii se ja sain vähä lisää aikaa.  
+            Kaiken kaikkiaan ihan hyvä lopputulos.
+            Juho tuli käymään hakee tavaroitansa ja jäi juomaan kahvit mun kaa. Vähä stressas että miten menis, koska me ei kuitenkaan kovin usein kahdestaan olla.  
+            Mut saatiin kyl puhuttuu ja oli tosi hauskaa. Käytiin sit loppu illasta isän kaa saunas joka oli tietysti erittäin mukavaa ja päivitin illalla tän blogin lähdekoodii. 
+            Mielestäni ainakin huomattavasti parempi nyt. 
+        </p>
+
+        <h2>Maanantain main questit</h2>
+        <ul>
+            <li>HTI.100 kurssi loppuun</li>
+            <li>Liikuntaa</li>
+            <li>Selvitä Ohjelmointi 1 homma</li>
+            <li>Työhakemuksia</li>
+            <li>Avun hakeminen</li>
+            <li>Vastaa työhakemus viestiin</li>
+        </ul>
+
+        <h2>Päivän laulu</h2>
+        <p><a href="https://www.youtube.com/watch?v=MeRIAew8eXc">Freaking Out The Neighborhood</a></p>
+    </div>
+
+    <hr>
+
+    <button class="collapsible"><header><h1>20.9.2023</h1></header></button>
     <div class="content">
         <aside>Aloitin tekee töitä.</aside>
 
@@ -128,13 +155,11 @@
 
         <h2>Päivän laulu</h2>
         <p><a href="https://youtu.be/fDFXLMbCG0A?si=dLVd8w2mINVZqPkh">Comedy</a></p>
-
-
     </div>
 
     <hr>
 
-    <button id="day 10" class="collapsible"><header><h1>19.9.2023</h1></header></button>
+    <button class="collapsible"><header><h1>19.9.2023</h1></header></button>
     <div class="content">
         <aside>Olin luennoissa.</aside>
 
@@ -157,13 +182,11 @@
 
         <h2>Päivän laulu</h2>
         <p><a href="https://youtu.be/lc8x-2TD-As?si=X7I8W36SX8GzE0tG">Posliinijättiläinen</a></p>
-
-
     </div>
 
     <hr>
 
-    <button id="day 9" class="collapsible"><header><h1>27.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>27.06.2023</h1></header></button>
     <div class="content">
         <aside>Syssyilin.</aside>
 
@@ -181,7 +204,7 @@
 
     <hr>
 
-    <button id="day 8" class="collapsible"><header><h1>26.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>26.06.2023</h1></header></button>
     <div class="content">
         <aside>Pikku puuhailin.</aside>
 
@@ -194,7 +217,7 @@
 
     <hr>
 
-    <button id="day 7" class="collapsible"><header><h1>25.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>25.06.2023</h1></header></button>
     <div class="content">
         <aside>Siivoilin.</aside>
 
@@ -207,7 +230,7 @@
 
     <hr>
 
-    <button id="day 6" class="collapsible"><header><h1>24.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>24.06.2023</h1></header></button>
     <div class="content">
         <aside>Makailin.</aside>
 
@@ -220,7 +243,7 @@
 
     <hr>
 
-    <button id="day 5" class="collapsible"><header><h1>23.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>23.06.2023</h1></header></button>
     <div class="content">
         <aside>Join liikaa.</aside>
 
@@ -233,7 +256,7 @@
 
     <hr>
 
-    <button id="day 4" class="collapsible"><header><h1>22.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>22.06.2023</h1></header></button>
     <div class="content">
         <aside>Juoksin karkuun.</aside>
 
@@ -251,7 +274,7 @@
 
     <hr>
 
-    <button id="day 3" class="collapsible"><header><h1>21.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>21.06.2023</h1></header></button>
     <div class="content">
         <aside>Sain mitä halusin.</aside>
 
@@ -264,7 +287,7 @@
 
     <hr>
 
-    <button id="day 2" class="collapsible"><header><h1>20.06.2023</h1></header></button>
+    <button class="collapsible"><header><h1>20.06.2023</h1></header></button>
     <div class="content">
         <aside>Tein tän sivun.</aside>
         <h2>Uuden arjen alku</h2>
@@ -276,7 +299,7 @@
 
     <hr>
 
-    <button id="day 1" class="collapsible"><header><h1>Lempi laulut</h1></header></button>
+    <button class="collapsible"><header><h1>Lempi laulut</h1></header></button>
     <div class="content">
         <ul>
             <li><a href="https://www.youtube.com/watch?v=rpaonSDPw7Y">Accordion</a></li>
@@ -296,7 +319,7 @@
         var i;
 
         for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
+            coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
                 if (content.style.maxHeight) {
@@ -305,9 +328,11 @@
                     content.style.maxHeight = content.scrollHeight + "px";
                 }
             });
-            document.getElementById(coll[i].id).click()
         }
+
+        // Open the first chapter by default
+        coll[0].click();
     </script>
 
 </body>
-</html> 
+</html>
