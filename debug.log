@@ -212,3 +212,6 @@
 [0921/124412.932:WARNING:dns_config_service_win.cc(712)] Failed to read DnsConfig.
 [0921/124417.946:WARNING:dns_config_service_win.cc(712)] Failed to read DnsConfig.
 [0921/124422.959:WARNING:dns_config_service_win.cc(712)] Failed to read DnsConfig.
+[1106/223337.475:ERROR:viz_main_impl.cc(162)] Exiting GPU process due to errors during initialization
+[1106/223337.696:ERROR:viz_main_impl.cc(162)] Exiting GPU process due to errors during initialization
+[1106/223337.909:ERROR:gpu_init.cc(441)] Passthrough is not supported, GL is disabled
