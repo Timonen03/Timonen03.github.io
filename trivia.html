@@ -14,6 +14,7 @@
             line-height: 1.8;
             text-shadow: 0 1px 0 #ffffff;
             max-width: 73%;
+            justify-content: center;
         }
 
         .container {
@@ -23,11 +24,28 @@
         input {
             padding: 8px;
         }
+        
+        .nameInput{
+            margin-right: 5px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttonRow{
+            margin-top: 20px
+        }
 
         button {
             padding: 8px;
             cursor: pointer;
         }
+
+            
+
     </style>
 </head>
 <body>
@@ -37,23 +55,39 @@
     </nav>
     <div class="container">
         <h1>GPTrivia</h1>   
+
         <label for="fruitInput">Enter a topic:</label>
         <input type="text" id="fruitInput" placeholder="Type a topic...">
         <button onclick="outputSentence()">Submit</button>
         <p id="outputSentence"></p>
 
+        
+
         <div class="input-section">
-            <label for="nameInput">Name:</label>
-            <input type="text" class="nameInput" placeholder="Enter a name...">
 
-            <label for="answerInput">Answer:</label>
-            <input type="text" class="answerInput" placeholder="Enter an answer...">
+            <div class ="input-row">
+           
+                <div class="anInput">
+                    <label for="nameInput">Name:</label>
+                    <input type="text" class="nameInput" placeholder="Enter a name...">    
+                </div>
+    
+                <div class="anInput">
+                    <label for="answerInput">Answer:</label>
+                    <input type="text" class="answerInput" placeholder="Enter an answer...">
+                </div>
 
-            <button onclick="addInputFields()">+</button>
+            </div>
+            
         </div>
 
-        <button onclick="submitAnswers()">Submit Answers</button>
+        <div class ="buttonRow">
+            <button onclick="submitAnswers()">Submit Answers</button>
+            <button onclick="addInputFields()">+</button>    
+        </div>
+
         <p id="submittedAnswers"></p>
+
     </div>
 
     <script>
@@ -84,38 +118,41 @@
                 outputElement.textContent = "Please enter a topic.";
             }
         }
-        let addedFieldsCount = 0;
 
         function addInputFields() {
             var inputSection = document.querySelector(".input-section");
 
+            var the_row = document.createElement("div");
+            the_row.className = "input-row";
+
             var container = document.createElement("div");
-            container.className = "input-container";
+            container.className = "anInput";
 
             var nameInput = document.createElement("input");
             nameInput.type = "text";
             nameInput.className = "nameInput";
             nameInput.placeholder = "Enter a name...";
 
+            container.appendChild(document.createTextNode("Name: "));
+            container.appendChild(nameInput);
+            the_row.appendChild(container);
+
+            var container = document.createElement("div");    
+            container.className = "anInput";
+
             var answerInput = document.createElement("input");
             answerInput.type = "text";
             answerInput.className = "answerInput";
             answerInput.placeholder = "Enter an answer...";
 
-            if (addedFieldsCount === 0) {
-                // If it's the first field, add it far from the original ones
-                container.style.marginTop = "20px";
-            }
-
-            container.appendChild(document.createTextNode("Name: "));
-            container.appendChild(nameInput);
             container.appendChild(document.createTextNode(" Answer: "));
             container.appendChild(answerInput);
+            the_row.appendChild(container);
 
-            inputSection.appendChild(container);
-            inputSection.appendChild(document.createElement("br"));
+            the_row.appendChild(document.createElement("br"));
 
-            addedFieldsCount++;
+            inputSection.appendChild(the_row);
+            
         }
         
         function submitAnswers() {
