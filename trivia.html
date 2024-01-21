@@ -44,6 +44,105 @@
             cursor: pointer;
         }
 
+        /*BUTTONS \/ -----------------------------------------------------*/
+        
+
+        /*pitää napin kasas?*/
+        .button {
+        position: fixed;
+        top: 36px;
+        right: 12px;
+        width: 74px;
+        height: 36px;
+        margin: -20px auto 0 auto;
+        overflow: hidden;
+        }
+
+        /*hitbox*/
+        .checkbox {
+        position: fixed;
+        width: 100%;
+        height: 20%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+        }
+
+        .knobs {
+        z-index: 2;
+        }
+
+        /*Tausta napille*/
+        .knobs,.layer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        }
+
+        .layer { 
+        width: 100%;
+        background-color: #ebf7fc;
+        transition: 0.3s ease all;
+        z-index: 1;
+        }
+
+        /* Button 10 */
+        #button-10 .knobs:before,
+        #button-10 .knobs:after,
+        #button-10 .knobs span {
+        position: absolute;
+        top: 4px;
+        width: 20px;
+        height: 10px;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+        padding: 9px 4px;
+        border-radius: 2px;
+        transition: 0.3s ease all;
+        }
+
+        #button-10 .knobs:before {
+        content: "";
+        left: 4px;
+        background-color: #03a9f4;
+        }
+
+        #button-10 .knobs:after {
+        content: "En";
+        right: 4px;
+        color: #4e4e4e;
+        }
+
+        #button-10 .knobs span {
+        display: inline-block;
+        left: 4px;
+        color: #fff;
+        z-index: 1;
+        }
+
+        #button-10 .checkbox:checked + .knobs span {
+        color: #4e4e4e;
+        }
+
+        #button-10 .checkbox:checked + .knobs:before {
+        left: 42px;
+        background-color: #f44336;
+        }
+
+        #button-10 .checkbox:checked + .knobs:after {
+        color: #fff;
+        }
+
+        #button-10 .checkbox:checked ~ .layer {
+        background-color: #fcebeb;
+        }
+
             
 
     </style>
@@ -53,6 +152,15 @@
         <a href="./olivian_peli.html">Olivian peli</a>
         <a href="./trivia.html">Trivia</a>
     </nav>
+
+    <div class="button b2" id="button-10">
+        <input type="checkbox" class="checkbox" id="languageToggle" onchange="toggleLanguage()"/>
+        <div class="knobs">
+            <span>Fi</span>
+        </div>
+        <div class="layer"></div>
+    </div>
+
     <div class="container">
         <h1>GPTrivia</h1>   
 
@@ -91,6 +199,17 @@
     </div>
 
     <script>
+
+        let isFi = true;
+
+        function toggleLanguage() {
+            if (isFi == true){
+                isFi = false 
+            }
+            else{
+                isFi = true
+            }
+        }
         
         function getRandomAdjective() {
             var adjectives = ["an easy", "a hard","a challenging", "a straightforward", "an ambiguous", "a Complex", "a clear", "a confusing", "a simple", "a tricky", "an unclear", "an obvious", "a complicated", "an ambivalent", "a direct", "a deceptive", "an intuitive", "an intricate", "an unambiguous", "a convoluted", "a lucid", "a misleading"];
@@ -104,16 +223,41 @@
             return tones[randomIndex];
         }
 
+        function henkiAdjektiivi() {
+            var adjectives = ["helppo", "vaikea", "vaativa", "selkeä", "epäselvä", "monimutkainen", "selvä", "sekava", "yksinkertainen", "hankala", "epäselvä", "ilmeinen", "monimutkainen", "ambivalentti", "suora", "harhaanjohtava", "intuitiivinen", "monimutkainen", "yksiselitteinen", "kiemurteleva", "kirkas", "harhaanjohtava"];
+            var randomIndex = Math.floor(Math.random() * adjectives.length);
+            return adjectives[randomIndex];
+        }
+
+        function hankiSävy() {
+            var tones = ["Tieteisfiktio harrastajan", "Etsivä noir:n", "Brittiläisen tutkimusmatkailijan", "Visailugurun", "Hullun tiedemiehen", "Rock 'n' Roll -DJ:n", "Renessanssi hovinarrin", "Supersankarin juontajan", "Klassisen elokuva juontajan", "Aikamatkustajan", "Merirosvokapteenin", "Piirroselokuvahahmo juontajan"];
+            var randomIndex = Math.floor(Math.random() * tones.length);
+            return tones[randomIndex];
+        }
+
         function outputSentence() {
             var fruitInput = document.getElementById("fruitInput").value;
             var outputElement = document.getElementById("outputSentence");
 
             if (fruitInput.trim() !== "") {
-                var randomAdjective = getRandomAdjective();
-                var randomTone = getRandomTone();
-                var sentence = "In the style of a " + randomTone + ", present " + randomAdjective + " trivia question about " + fruitInput.toLowerCase() + "!";
-                outputElement.textContent = sentence;
-                copyToClipboard(sentence);
+                
+                if (isFi ==true) {
+                    var randomAdjective = henkiAdjektiivi();
+                    var randomTone = hankiSävy();
+                    
+                    var sentence = randomTone + " tyylisesti, esitä " + randomAdjective + " trivia kysymys aiheesta " + fruitInput.toLowerCase() + "!";
+                    outputElement.textContent = sentence;
+                    copyToClipboard(sentence);
+                } 
+
+                else {
+                    var randomAdjective = getRandomAdjective();
+                    var randomTone = getRandomTone();
+                    var sentence = "In the style of a " + randomTone + ", present " + randomAdjective + " trivia question about " + fruitInput.toLowerCase() + "!";
+                    outputElement.textContent = sentence;
+                    copyToClipboard(sentence);
+                }
+
             } else {
                 outputElement.textContent = "Please enter a topic.";
             }
@@ -167,15 +311,30 @@
                 var answer = answerInputs[i].value.trim();
 
                 if (name !== "" && answer !== "") {
-                    var answerText = name + " answered " + answer;
-                    answers.push(answerText);
-                    copyToClipboard(answerText);
+                    
+                    if (isFi ==true) {
+                        var answerText = name + " vastasi: \"" + answer + "\"";
+                        answers.push(answerText);
+                    } 
+
+                    else {
+                        var answerText = name + " answered: \"" + answer + "\"";
+                        answers.push(answerText);
+                    }
                 }
             }
 
             if (answers.length > 0) {
-                submittedAnswersElement.textContent = answers.join(", ")+". In the same style, present the correct answer and declare player by player who was right and wrong.";
-                copyToClipboard(answers.join(", ")+". In the same style, present the correct answer and declare player by player who was right and wrong.");
+
+                if (isFi ==true) {
+                    submittedAnswersElement.textContent = answers.join(", ")+". Saman tyylisesti, esitä oikea vastaus ja käy jokainen pelaaja läpi ja kerro kuka oli oikeassa ja väärässä.";
+                    copyToClipboard(answers.join(", ")+". Saman tyylisesti, esitä oikea vastaus ja käy jokainen pelaaja läpi ja kerro kuka oli oikeassa ja väärässä.");
+                } 
+
+                else {
+                    submittedAnswersElement.textContent = answers.join(", ")+". In the same style, present the correct answer and declare player by player who was right and wrong.";
+                    copyToClipboard(answers.join(", ")+". In the same style, present the correct answer and declare player by player who was right and wrong.");
+                }
 
             } else {
                 submittedAnswersElement.textContent = "No answers submitted.";
