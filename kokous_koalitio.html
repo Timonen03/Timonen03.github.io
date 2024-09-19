@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+    <title>Anssin Blogi</title>
+    <style>
+        body {
+            margin: 5% auto;
+            background: #f2f2f2;
+            color: #444444;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            text-shadow: 0 1px 0 #ffffff;
+            max-width: 73%;
+            display: block;
+            position: relative;
+        }
+
+        input, textarea {
+            background-color: #d0d1d0;
+            border: 2px solid transparent;
+            border-radius: 0;
+            box-sizing: border-box;
+            color: #000; /* Updated to black */
+            display: block;
+            font-size: 80%;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 5px; /* Added margin for spacing */
+            outline: none;
+            padding: 16px;
+            position: relative;
+            transition: background-color .3s, border-color .3s;
+            width: 100%;
+    }
+
+        label {
+            display: block; /* Ensure labels are block elements */
+            font-size: 14px;
+            margin-bottom: 5px; /* Space between label and input */
+            color: #444444;
+        }
+
+        .inputs {
+            margin-bottom: 20px; /* Space between input fields */
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 26px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #444444;
+            background-color: #d0d1d0;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #d0d1d0}
+
+        .button:active {
+            background-color: #d0d1d0;
+            box-shadow: 0 5px #999;
+            transform: translateY(4px);
+        }
+
+        h2{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <main class="sivu">
+            <h1>Kokous</h1>
+            <h2>Tee kokouspöytäkirja tähän ja kopioi se leikepöydälle alhaalta löytyvästä napista.</h2>
+            <form class="Kentat" id="kokousForm">
+                <div class="PJSJ">
+                    <div class="inputs">
+                        <label class="input__label" for="Puheenjohtaja">Puheenjohtaja</label>
+                        <input type="text" id="Puheenjohtaja" name="Puheenjohtaja" required="">
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="Sihteeri">Sihteeri</label>
+                        <input type="text" id="Sihteeri" name="Sihteeri" required="">
+                    </div>
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="Sijainti">Sijainti</label>
+                    <input type="text" id="Sijainti" name="Sijainti" required="">
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="Juoma">Juoma</label>
+                    <input type="text" id="Juoma" name="Juoma" required="">
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="Kokouksen_nimi">Kokouksen nimi</label>
+                    <input type="text" id="Kokouksen_nimi"placeholder="Gambina kokous = Gokous, Gin lemon = Glokous, etc.." name="Kokouksen_nimi" required="">
+                </div>
+
+                <div class="inputs">
+                    <label class="input__label" for="kokous-avaus">1. Kokouksen avaus</label>
+                    <textarea id="kokous-avaus" name="kokous-avaus" required="" rows="8"></textarea>
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="laillisuus">2. Kokouksen laillisuus &amp; päätösvaltaisuus</label>
+                    <textarea id="laillisuus" name="laillisuus" required="" rows="8"></textarea>
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="ilmoitusasiat">3. Ilmoitusasiat &amp; posti</label>
+                    <textarea id="ilmoitusasiat" name="ilmoitusasiat" required="" rows="8"></textarea>
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="kannatusjasenet">4. Uusien kannatusjäsenten hyväksyminen</label>
+                    <textarea id="kannatusjasenet" name="kannatusjasenet" required="" rows="8"></textarea>
+                </div>
+                <div class="inputs">
+                    <label class="input__label" for="muut-asiat">5. Muut esille tulevat asiat</label>
+                    <textarea id="muut-asiat" name="muut-asiat" required="" rows="8"></textarea>
+                </div>
+                
+                <div class="inputs">
+                    <label class="input__label" for="muut-asiat">6. Juoman arvioiminen</label>
+                    <textarea id="keskiarvo" placeholder="Lisää numeroita rivi riviltä" name="keskiarvo" required="" rows="8"></textarea>
+                </div>
+
+                <div class="inputs">
+                    <label class="input__label" for="paattaminen">7. Kokouksen päättäminen</label>
+                    <textarea id="paattaminen" name="paattaminen" required="" rows="8"></textarea>
+                </div>
+            </form>
+            <button  id="copyButton" class="button" onclick="outputSentence()" >Kopioi leikepöydälle</button>
+        </main>
+    </div>
+
+    <script>
+        
+        function copyToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+        }
+
+        function calculateAverage() {
+            const inputArea = document.getElementById('keskiarvo').value;
+            
+            // Split the input by line breaks, trim whitespace, and filter out empty lines
+            const lines = inputArea.split('\n').map(line => line.trim()).filter(line => line !== '');
+            
+            // Convert lines to float numbers
+            const numbers = lines.map(line => parseFloat(line)).filter(num => !isNaN(num));
+            
+            if (numbers.length === 0) {
+                document.getElementById('output').textContent = 'No valid numbers entered!';
+                return "0";
+            }
+
+            // Calculate the sum and the average
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            const average = sum / numbers.length;
+
+            return `${average.toFixed(2)}`;
+        }
+
+
+        function outputSentence() {
+
+            var puheenjohtaja = document.getElementById("Puheenjohtaja").value;
+
+            var sihteeri = document.getElementById("Sihteeri").value;
+        
+            var sijainti = document.getElementById("Sijainti").value;
+
+            var kokousavaus = document.getElementById("kokous-avaus").value;
+
+            var laillisuus  = document.getElementById("laillisuus").value;
+
+            var ilmoitusasiat = document.getElementById("ilmoitusasiat").value;
+
+            var kannatusjasenet = document.getElementById("kannatusjasenet").value;
+
+            var muut = document.getElementById("muut-asiat").value;
+
+            var keskiarvo = calculateAverage();
+
+            var paattaminen = document.getElementById("paattaminen").value;
+
+            copyToClipboard(
+                "Puheenjohtaja: " + puheenjohtaja + '\n' + 
+                "Sihteeri: " + sihteeri + '\n' + 
+                "Sijainti: " + sijainti + '\n' + '\n' +
+                "1. Kokouksen avaus" +  '\n' + kokousavaus + '\n' + '\n' +
+                "2. Kokouksen laillisuus ja päätösvaltaisuus" +  '\n' + laillisuus + '\n' + '\n' +
+                "3. Ilmoitusasiat ja posti" +  '\n' + ilmoitusasiat + '\n' + '\n' +
+                "4. Uusien kannatusjäsenten hyväksyminen" +  '\n' + kannatusjasenet + '\n' + '\n' +
+                "5. Muut esille tulevat asiat" +  '\n' + muut + '\n' + '\n' +
+                "6. Osallistujien arvioiden keskiarvo: " + keskiarvo + '\n' + '\n' +      
+                "7. Kokouksen päättäminen" +  '\n' + paattaminen
+            );
+        }
+
+
+
+    </script>
+
+</body>
+</html>
