@@ -70,148 +70,254 @@
             transform: translateY(4px);
         }
 
-        h2{
-            
+        .kokous{
+            display: inline-block;
+            position: absolute;
         }
 
     </style>
 </head>
-<body>
-    <div>
-        <main class="sivu">
-            <h1>Kokous</h1>
-            <h2>Tee kokouspöytäkirja tähän ja kopioi se leikepöydälle alhaalta löytyvästä napista.</h2>
-            <form class="Kentat" id="kokousForm">
-                <div class="PJSJ">
-                    <div class="inputs">
-                        <label class="input__label" for="Puheenjohtaja">Puheenjohtaja</label>
-                        <input type="text" id="Puheenjohtaja" name="Puheenjohtaja" required="">
-                    </div>
-                    <div class="inputs">
-                        <label class="input__label" for="Sihteeri">Sihteeri</label>
-                        <input type="text" id="Sihteeri" name="Sihteeri" required="">
-                    </div>
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="Sijainti">Sijainti</label>
-                    <input type="text" id="Sijainti" name="Sijainti" required="">
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="Juoma">Juoma</label>
-                    <input type="text" id="Juoma" name="Juoma" required="">
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="Kokouksen_nimi">Kokouksen nimi</label>
-                    <input type="text" id="Kokouksen_nimi"placeholder="Gambina kokous = Gokous, Gin lemon = Glokous, etc.." name="Kokouksen_nimi" required="">
-                </div>
+    <select name="kokous" id="kokous" style="float:right;">
+        <option value="gambina" selected>Gambina</option>
+        <option value="brause">Brause (TODO)</option>
+        <option value="koalitio">Koalitio (TODO)</option>
+    </select>
+    <body>
+        <div>
+            <main class="sivu">
+                <h1>Kokous</h1>
+                <h2>Tee kokouspöytäkirja tähän ja kopioi se leikepöydälle alhaalta löytyvästä napista.</h2>
 
-                <div class="inputs">
-                    <label class="input__label" for="kokous-avaus">1. Kokouksen avaus</label>
-                    <textarea id="kokous-avaus" name="kokous-avaus" required="" rows="8"></textarea>
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="laillisuus">2. Kokouksen laillisuus &amp; päätösvaltaisuus</label>
-                    <textarea id="laillisuus" name="laillisuus" required="" rows="8"></textarea>
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="ilmoitusasiat">3. Ilmoitusasiat &amp; posti</label>
-                    <textarea id="ilmoitusasiat" name="ilmoitusasiat" required="" rows="8"></textarea>
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="kannatusjasenet">4. Uusien kannatusjäsenten hyväksyminen</label>
-                    <textarea id="kannatusjasenet" name="kannatusjasenet" required="" rows="8"></textarea>
-                </div>
-                <div class="inputs">
-                    <label class="input__label" for="muut-asiat">5. Muut esille tulevat asiat</label>
-                    <textarea id="muut-asiat" name="muut-asiat" required="" rows="8"></textarea>
-                </div>
+                <form class="Kentat" id="kokousForm">
+                    <div class="PJSJ">
+                        <div class="inputs">
+                            <label class="input__label" for="Puheenjohtaja">Puheenjohtaja</label>
+                            <input type="text" id="Puheenjohtaja" name="Puheenjohtaja" required="">
+                        </div>
+                        <div class="inputs">
+                            <label class="input__label" for="Sihteeri">Sihteeri</label>
+                            <input type="text" id="Sihteeri" name="Sihteeri" required="">
+                        </div>
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="Sijainti">Sijainti</label>
+                        <input type="text" id="Sijainti" name="Sijainti" required="">
+                    </div>
+                    
+                    <!--
+
+                    <div class="inputs">
+                        <label class="input__label" for="Juoma">Juoma</label>
+                        <input type="text" id="Juoma" name="Juoma" required="">
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="Kokouksen_nimi">Kokouksen nimi</label>
+                        <input type="text" id="Kokouksen_nimi"placeholder="Gambina kokous = Gokous, Gin lemon = Glokous, etc.." name="Kokouksen_nimi" required="">
+                    </div>
+                    -->
+                    <div class="inputs">
+                        <label class="input__label" for="kokous-avaus">1. Kokouksen avaus</label>
+                        <textarea id="kokous-avaus" name="kokous-avaus" required="" rows="8"></textarea>
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="laillisuus">2. Kokouksen laillisuus &amp; päätösvaltaisuus</label>
+                        <textarea id="laillisuus" name="laillisuus" required="" rows="8"></textarea>
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="ilmoitusasiat">3. Ilmoitusasiat &amp; posti</label>
+                        <textarea id="ilmoitusasiat" name="ilmoitusasiat" required="" rows="8"></textarea>
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="kannatusjasenet">4. Uusien kannatusjäsenten hyväksyminen</label>
+                        <textarea id="kannatusjasenet" name="kannatusjasenet" required="" rows="8"></textarea>
+                    </div>
+                    <div class="inputs">
+                        <label class="input__label" for="muut-asiat">5. Muut esille tulevat asiat</label>
+                        <textarea id="muut-asiat" name="muut-asiat" required="" rows="8"></textarea>
+                    </div>
+                    <!--
+                    <div class="inputs">
+                        <label class="input__label" for="keskiarvo">6. Juoman arvioiminen</label>
+                        <textarea id="keskiarvo" placeholder="Lisää numeroita rivi riviltä" name="keskiarvo" required="" rows="8"></textarea>
+                    </div>
+                    -->
+                    <div class="inputs">
+                        <label class="input__label" for="paattaminen">6. Kokouksen päättäminen</label>
+                        <textarea id="paattaminen" name="paattaminen" required="" rows="8"></textarea>
+                    </div>
+                </form>
+                <button  id="copyButton" class="button" onclick="outputSentence()" >Kopioi leikepöydälle</button>
+            </main>
+        </div>
+        <script>
+            
+            function copyToClipboard(text) {
+                var textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+            }
+            
+            /*
+            function calculateAverage() {
+                const inputArea = document.getElementById('keskiarvo').value;
                 
-                <div class="inputs">
-                    <label class="input__label" for="muut-asiat">6. Juoman arvioiminen</label>
-                    <textarea id="keskiarvo" placeholder="Lisää numeroita rivi riviltä" name="keskiarvo" required="" rows="8"></textarea>
-                </div>
+                // Split the input by line breaks, trim whitespace, and filter out empty lines
+                const lines = inputArea.split('\n').map(line => line.trim()).filter(line => line !== '');
+                
+                // Convert lines to float numbers
+                const numbers = lines.map(line => parseFloat(line)).filter(num => !isNaN(num));
+                
+                if (numbers.length === 0) {
+                    document.getElementById('output').textContent = 'No valid numbers entered!';
+                    return "0";
+                }
 
-                <div class="inputs">
-                    <label class="input__label" for="paattaminen">7. Kokouksen päättäminen</label>
-                    <textarea id="paattaminen" name="paattaminen" required="" rows="8"></textarea>
-                </div>
-            </form>
-            <button  id="copyButton" class="button" onclick="outputSentence()" >Kopioi leikepöydälle</button>
-        </main>
-    </div>
+                // Calculate the sum and the average
+                const sum = numbers.reduce((a, b) => a + b, 0);
+                const average = sum / numbers.length;
 
-    <script>
-        
-        function copyToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textArea);
-        }
+                return `${average.toFixed(2)}`;
+            }
+            */
 
-        function calculateAverage() {
-            const inputArea = document.getElementById('keskiarvo').value;
-            
-            // Split the input by line breaks, trim whitespace, and filter out empty lines
-            const lines = inputArea.split('\n').map(line => line.trim()).filter(line => line !== '');
-            
-            // Convert lines to float numbers
-            const numbers = lines.map(line => parseFloat(line)).filter(num => !isNaN(num));
-            
-            if (numbers.length === 0) {
-                document.getElementById('output').textContent = 'No valid numbers entered!';
-                return "0";
+            function outputSentence() {
+
+                var puheenjohtaja = document.getElementById("Puheenjohtaja").value;
+
+                var sihteeri = document.getElementById("Sihteeri").value;
+                
+                var sijainti = document.getElementById("Sijainti").value;
+                /*
+                var juoma = document.getElementById("Juoma").value;
+                
+                var nimi = document.getElementById("Kokouksen_nimi").value;            
+                */
+                var kokousavaus = document.getElementById("kokous-avaus").value;
+
+                var laillisuus  = document.getElementById("laillisuus").value;
+
+                var ilmoitusasiat = document.getElementById("ilmoitusasiat").value;
+
+                var kannatusjasenet = document.getElementById("kannatusjasenet").value;
+
+                var muut = document.getElementById("muut-asiat").value;
+
+                //var keskiarvo = calculateAverage();
+
+                var paattaminen = document.getElementById("paattaminen").value;
+
+                copyToClipboard(
+                    "Puheenjohtaja: " + puheenjohtaja + '\n' + 
+                    "Sihteeri: " + sihteeri + '\n' + 
+                    "Sijainti: " + sijainti + '\n' + '\n' +
+                    //"Juoma: " + juoma + '\n' +
+                    //"Kokouksen nimi: " + nimi + '\n' + '\n' +
+                    "1. Kokouksen avaus" +  '\n' + kokousavaus + '\n' + '\n' +
+                    "2. Kokouksen laillisuus ja päätösvaltaisuus" +  '\n' + laillisuus + '\n' + '\n' +
+                    "3. Ilmoitusasiat ja posti" +  '\n' + ilmoitusasiat + '\n' + '\n' +
+                    "4. Uusien kannatusjäsenten hyväksyminen" +  '\n' + kannatusjasenet + '\n' + '\n' +
+                    "5. Muut esille tulevat asiat" +  '\n' + muut + '\n' + '\n' +
+                    //"6. Osallistujien arvioiden keskiarvo: " + keskiarvo + '\n' + '\n' +      
+                    "6. Kokouksen päättäminen" +  '\n' + paattaminen
+                );
             }
 
-            // Calculate the sum and the average
-            const sum = numbers.reduce((a, b) => a + b, 0);
-            const average = sum / numbers.length;
-
-            return `${average.toFixed(2)}`;
-        }
-
-
-        function outputSentence() {
-
-            var puheenjohtaja = document.getElementById("Puheenjohtaja").value;
-
-            var sihteeri = document.getElementById("Sihteeri").value;
-        
-            var sijainti = document.getElementById("Sijainti").value;
-
-            var kokousavaus = document.getElementById("kokous-avaus").value;
-
-            var laillisuus  = document.getElementById("laillisuus").value;
-
-            var ilmoitusasiat = document.getElementById("ilmoitusasiat").value;
-
-            var kannatusjasenet = document.getElementById("kannatusjasenet").value;
-
-            var muut = document.getElementById("muut-asiat").value;
-
-            var keskiarvo = calculateAverage();
-
-            var paattaminen = document.getElementById("paattaminen").value;
-
-            copyToClipboard(
-                "Puheenjohtaja: " + puheenjohtaja + '\n' + 
-                "Sihteeri: " + sihteeri + '\n' + 
-                "Sijainti: " + sijainti + '\n' + '\n' +
-                "1. Kokouksen avaus" +  '\n' + kokousavaus + '\n' + '\n' +
-                "2. Kokouksen laillisuus ja päätösvaltaisuus" +  '\n' + laillisuus + '\n' + '\n' +
-                "3. Ilmoitusasiat ja posti" +  '\n' + ilmoitusasiat + '\n' + '\n' +
-                "4. Uusien kannatusjäsenten hyväksyminen" +  '\n' + kannatusjasenet + '\n' + '\n' +
-                "5. Muut esille tulevat asiat" +  '\n' + muut + '\n' + '\n' +
-                "6. Osallistujien arvioiden keskiarvo: " + keskiarvo + '\n' + '\n' +      
-                "7. Kokouksen päättäminen" +  '\n' + paattaminen
-            );
-        }
+            function saveInputValues() {
+                const input1 = document.getElementById("Puheenjohtaja");
+                const input2 = document.getElementById("Sihteeri");
+                const input3 = document.getElementById("Sijainti");
+                //const input4 = document.getElementById("Juoma");
+                //const input5 = document.getElementById("Kokouksen_nimi");
+                const input6 = document.getElementById("kokous-avaus");
+                const input7 = document.getElementById("laillisuus");
+                const input8 = document.getElementById("ilmoitusasiat");
+                const input9 = document.getElementById("kannatusjasenet");
+                const input10 = document.getElementById("muut-asiat");
+                //const input11 = document.getElementById("keskiarvo");
+                const input12 = document.getElementById("paattaminen");
 
 
+                // Store values for each input field
+                sessionStorage.setItem('myInputValue1', input1.value);
+                sessionStorage.setItem('myInputValue2', input2.value);
+                sessionStorage.setItem('myInputValue3', input3.value);
+                //sessionStorage.setItem('myInputValue4', input4.value);
+                //sessionStorage.setItem('myInputValue5', input5.value);
+                sessionStorage.setItem('myInputValue6', input6.value);
+                sessionStorage.setItem('myInputValue7', input7.value);
+                sessionStorage.setItem('myInputValue8', input8.value);
+                sessionStorage.setItem('myInputValue9', input9.value);
+                sessionStorage.setItem('myInputValue10', input10.value);
+                //sessionStorage.setItem('myInputValue11', input10.value);
+                sessionStorage.setItem('myInputValue12', input10.value);
+                
+            }
 
-    </script>
+            // Function to load saved input values on page load
+            function loadInputValues() {
+                // Retrieve stored values for each input field
+                const savedValue1 = sessionStorage.getItem('myInputValue1');
+                const savedValue2 = sessionStorage.getItem('myInputValue2');
+                const savedValue3 = sessionStorage.getItem('myInputValue3');
+                //const savedValue4 = sessionStorage.getItem('myInputValue4');
+                //const savedValue5 = sessionStorage.getItem('myInputValue5');
+                const savedValue6 = sessionStorage.getItem('myInputValue6');
+                const savedValue7 = sessionStorage.getItem('myInputValue7');
+                const savedValue8 = sessionStorage.getItem('myInputValue8');
+                const savedValue9 = sessionStorage.getItem('myInputValue9');
+                const savedValue10 = sessionStorage.getItem('myInputValue10');
+                //const savedValue11 = sessionStorage.getItem('myInputValue11');
+                const savedValue12 = sessionStorage.getItem('myInputValue12');
 
-</body>
+                if (savedValue1) {
+                    document.getElementById("Puheenjohtaja").value = savedValue1;
+                }
+                if (savedValue2) {
+                    document.getElementById("Sihteeri").value = savedValue2;
+                }
+                if (savedValue3) {
+                    document.getElementById("Sijainti").value = savedValue3;
+                }
+                /*
+                if (savedValue4) {
+                    document.getElementById("Juoma").value = savedValue4;
+                }
+                if (savedValue5) {
+                    document.getElementById("Kokouksen_nimi").value = savedValue5;
+                }
+                */
+                if (savedValue6) {
+                    document.getElementById("kokous-avaus").value = savedValue6;
+                }
+                if (savedValue7) {
+                    document.getElementById("laillisuus").value = savedValue7;
+                }
+                if (savedValue8) {
+                    document.getElementById("ilmoitusasiat").value = savedValue8;
+                }
+                if (savedValue9) {
+                    document.getElementById("kannatusjasenet").value = savedValue9;
+                }
+                if (savedValue10) {
+                    document.getElementById("muut-asiat").value = savedValue10;
+                }
+                /*
+                if (savedValue11) {
+                    document.getElementById("keskiarvo").value = savedValue11;
+                }
+                */
+                if (savedValue12) {
+                    document.getElementById("paattaminen").value = savedValue12;
+                }
+            }
+
+            // Load input values when the page loads
+            window.onload = loadInputValues;
+        </script>
+
+    </body> 
 </html>
+
